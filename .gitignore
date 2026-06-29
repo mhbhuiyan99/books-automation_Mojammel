@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+test-results/
+allure-results/
+allure-report/
+screenshots/
+videos/
+traces/
+.pytest_cache/
+*.egg-info/
