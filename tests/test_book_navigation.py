@@ -4,7 +4,7 @@ def test_random_book_navigation(page):
     
     home = HomePage(page)
 
-    home.Open()
+    home.open()
     indices = home.random_book_indices()
 
     for index in indices:

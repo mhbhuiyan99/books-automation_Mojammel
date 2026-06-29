@@ -16,7 +16,9 @@ def test_broken_links(page):
         if href:
             hrefs.add(page.url.rsplit("/", 1)[0] + "/" + href if not href.startswith("http") else href)
 
-    for url in hrefs:
-        response = requests.get(url)
+    session = requests.Session()
+    session.trust_env = False
 
-        assert response.status_code == 200, f"{url} returned {response.status_code}"
+    for url in hrefs:
+        response = session.get(url)
+        assert response.status_code == 200
