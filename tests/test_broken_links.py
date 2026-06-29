@@ -1,8 +1,10 @@
+from pages.home_page import HomePage
 import requests
 
 def test_broken_links(page):
 
-    page.goto("https://books.toscrape.com/index.html")
+    home = HomePage(page)
+    home.open()
 
     links = page.locator("a")
 
